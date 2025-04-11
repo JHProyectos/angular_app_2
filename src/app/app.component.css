@@ -1,0 +1,326 @@
+.landing-page {
+    background: linear-gradient(135deg, #f9f7ff 0%, #f0f8ff 100%);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  }
+  
+  .landing-page::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 223, 235, 0.6) 0%, rgba(255, 223, 235, 0) 70%);
+    z-index: 0;
+  }
+  
+  .landing-page::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(213, 242, 255, 0.6) 0%, rgba(213, 242, 255, 0) 70%);
+    z-index: 0;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+    animation: pulseScale 1s ease-out;
+  }
+  
+  @keyframes pulseScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.03);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  h1 {
+    color: #2d1a66;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+    text-shadow: 2px 2px 0px rgba(157, 139, 219, 0.3);
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #ffb6c1, #9d8bdb);
+    border-radius: 2px;
+  }
+  
+  .subtitle {
+    color: #4a4a4a;
+    font-size: 1.3rem;
+    margin-top: 20px;
+    font-weight: 500;
+  }
+  
+  .step-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .step {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-left: 6px solid transparent;
+    position: relative;
+    animation: slideInRight 0.5s ease-out;
+    animation-fill-mode: both;
+  }
+  
+  .step:nth-child(odd) {
+    animation: slideInLeft 0.5s ease-out;
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .step:nth-child(1) {
+    animation-delay: 0.1s;
+    border-left-color: #ffb6c1;
+  }
+  .step:nth-child(2) {
+    animation-delay: 0.2s;
+    border-left-color: #ffd1dc;
+  }
+  .step:nth-child(3) {
+    animation-delay: 0.3s;
+    border-left-color: #ffdab9;
+  }
+  .step:nth-child(4) {
+    animation-delay: 0.4s;
+    border-left-color: #ffffcc;
+  }
+  .step:nth-child(5) {
+    animation-delay: 0.5s;
+    border-left-color: #ccffcc;
+  }
+  .step:nth-child(6) {
+    animation-delay: 0.6s;
+    border-left-color: #ccffff;
+  }
+  .step:nth-child(7) {
+    animation-delay: 0.7s;
+    border-left-color: #ccccff;
+  }
+  .step:nth-child(8) {
+    animation-delay: 0.8s;
+    border-left-color: #e0b0ff;
+  }
+  .step:nth-child(9) {
+    animation-delay: 0.9s;
+    border-left-color: #dda0dd;
+  }
+  
+  .step:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .step::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(45deg, transparent 98%, rgba(255, 255, 255, 0.5) 100%);
+    border-radius: 16px;
+    pointer-events: none;
+  }
+  
+  .step-number {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-right: 22px;
+    flex-shrink: 0;
+    box-shadow: 0 8px 20px rgba(42, 17, 113, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  .step:hover .step-number {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 12px 25px rgba(42, 17, 113, 0.5);
+  }
+  
+  .step-content {
+    flex: 1;
+  }
+  
+  .step h2 {
+    color: #2d1a66;
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+  }
+  
+  .step:hover h2 {
+    color: #4a22a8;
+    transform: translateX(5px);
+  }
+  
+  .step p {
+    color: #333333;
+    font-weight: 500;
+  }
+  
+  pre {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 22px;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 15px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .step:hover pre {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  }
+  
+  code {
+    font-family: "Fira Code", "Courier New", monospace;
+    color: #ffffff;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  footer {
+    margin-top: 60px;
+    text-align: center;
+    color: #333333;
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1s ease-out 1s;
+    animation-fill-mode: both;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .landing-page {
+      padding: 25px;
+    }
+  
+    .step {
+      flex-direction: column;
+    }
+  
+    .step-number {
+      margin-bottom: 15px;
+    }
+  
+    h1 {
+      font-size: 2.3rem;
+    }
+  
+    .step h2 {
+      font-size: 1.4rem;
+    }
+  }
+  
+  /* Añadir un efecto de destello en los bordes al hacer hover */
+  .landing-page:hover {
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Añadir un efecto de pulso a los números */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .step-number {
+    animation: pulse 2s infinite;
+  }
+  
+  .step:hover .step-number {
+    animation: none;
+  }
+  
