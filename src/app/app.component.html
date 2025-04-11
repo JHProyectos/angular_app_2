@@ -71,29 +71,90 @@
       <div class="step">
         <div class="step-number">8</div>
         <div class="step-content">
-          <h2>Desplegar</h2>
-          <pre><code># Antes de desplegar, verifica dónde está index.html:
-  # - Si está en dist/nombre-del-repo:
-  npx angular-cli-ghpages --dir=dist/nombre-del-repo
-  # - Si está en dist/nombre-del-repo/browser:
-  npx angular-cli-ghpages --dir=dist/nombre-del-repo/browser</code></pre>
+          <h2>Verificar ubicación de index.html</h2>
+          <pre><code># Revisa la carpeta generada:
+  dir dist\nombre-del-repo
+  # Si index.html está en dist/nombre-del-repo, usa esa carpeta
+  # Si ves una carpeta browser, revisa:
+  dir dist\nombre-del-repo\browser
+  # Si index.html está en dist/nombre-del-repo/browser, usa esa carpeta</code></pre>
         </div>
       </div>
   
       <div class="step">
         <div class="step-number">9</div>
         <div class="step-content">
+          <h2>Desplegar</h2>
+          <pre><code># Si index.html está en dist/nombre-del-repo:
+  npx angular-cli-ghpages --dir=dist/nombre-del-repo
+  # Si index.html está en dist/nombre-del-repo/browser:
+  npx angular-cli-ghpages --dir=dist/nombre-del-repo/browser</code></pre>
+        </div>
+      </div>
+  
+      <div class="step">
+        <div class="step-number">10</div>
+        <div class="step-content">
           <h2>Configurar GitHub Pages</h2>
           <p>En GitHub: Settings > Pages > Source: gh-pages, / (root)</p>
           <p>URL: https://JHProyectos.github.io/nombre-del-repo/</p>
         </div>
       </div>
+      
+      <div class="step update-section">
+        <div class="step-number">+</div>
+        <div class="step-content">
+          <h2>Actualizar la app después de modificarla</h2>
+          <p>Sigue estos pasos para actualizar tu aplicación después de realizar cambios:</p>
+          
+          <div class="update-steps">
+            <div class="update-step">
+              <h3>1. Editar y probar</h3>
+              <pre><code># Edita src/app/ y prueba con:
+  ng serve  # Probar en http://localhost:4200</code></pre>
+            </div>
+            
+            <div class="update-step">
+              <h3>2. Push al código fuente (Opcional)</h3>
+              <pre><code>git add .
+  git commit -m "Actualizar proyecto con nuevos cambios"
+  git push origin main</code></pre>
+            </div>
+            
+            <div class="update-step">
+              <h3>3. Reconstruir (requerido para reflejar cambios)</h3>
+              <pre><code>ng build --output-path dist/nombre-del-repo --base-href /nombre-del-repo/</code></pre>
+            </div>
+            
+            <div class="update-step">
+              <h3>4. Verificar index.html</h3>
+              <pre><code>dir dist\nombre-del-repo
+  # Si ves una carpeta browser:
+  dir dist\nombre-del-repo\browser</code></pre>
+            </div>
+            
+            <div class="update-step">
+              <h3>5. Redeployar</h3>
+              <pre><code># Si index.html está en dist/nombre-del-repo:
+  npx angular-cli-ghpages --dir=dist/nombre-del-repo
+  # Si index.html está en dist/nombre-del-repo/browser:
+  npx angular-cli-ghpages --dir=dist/nombre-del-repo/browser</code></pre>
+            </div>
+            
+            <div class="update-step">
+              <h3>6. Revisar el sitio</h3>
+              <p>Visita https://JHProyectos.github.io/nombre-del-repo/ para ver los cambios</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     
     <footer>
-      <p>Desarrollado con Angular</p>
+      <p>Desarrollado por JH Proyectos</p>
     </footer>
   </div>
+  
     
 </main>
 
