@@ -69,7 +69,7 @@ h1:hover::after{
 
 .header{
  /*Imagen de fondo*/
- background-image: url('public/fondo.jpg');
+ background-image: url('https://github.com/JHProyectos/angular_app_2/blob/eb6f890373a1bc716d48cd15c03b1aa97be695d8/public/fondo.jpg');
  background-repeat: no-repeat;
  background-size: cover;
  background-position: center;
