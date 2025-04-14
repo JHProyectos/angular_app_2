@@ -1,0 +1,124 @@
+<div class="landing-page">
+    <div class="header" style="background-image: url('/./assets/fondo.jpg')">
+      <h1>Guía Angular - Vercel</h1>
+      <p class="subtitle">Instrucciones paso a paso para desplegar tu aplicación Angular en Vercel</p>
+    </div>
+    
+    <button class="back-link" (click)="navigateTo('/')">← Volver a la página principal</button>
+    <app-back-button></app-back-button>
+    
+    <div class="step-container">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h2>Preparar tu build Angular</h2>
+          <p>Primero, asegurate de tener el build de producción listo:</p>
+          <pre><code>ng build --configuration production</code></pre>
+          <p>Esto va a generar la carpeta dist/angular_app_2/browser (o como se llame tu outputPath).</p>
+        </div>
+      </div>
+  
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h2>Subir tu proyecto a GitHub / GitLab / Bitbucket</h2>
+          <p>Vercel se conecta automáticamente con tus repos.</p>
+          <p>Ya que vos ya tenés el proyecto en GitHub, ¡perfecto!</p>
+        </div>
+      </div>
+  
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h2>Ir a vercel.com</h2>
+          <p>Iniciá sesión con tu cuenta de GitHub.</p>
+          <p>Dale a "New Project".</p>
+          <p>Elegí tu repo angular_app_2.</p>
+        </div>
+      </div>
+  
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h2>Configurar el proyecto Angular</h2>
+          <p>Cuando te pregunte por los comandos de build, completá así:</p>
+          
+          <div class="config-table">
+            <div class="config-row">
+              <div class="config-label">Framework Preset</div>
+              <div class="config-value">Other (no elijas Angular directamente)</div>
+            </div>
+            <div class="config-row">
+              <div class="config-label">Build Command</div>
+              <div class="config-value">ng build --configuration production</div>
+            </div>
+            <div class="config-row">
+              <div class="config-label">Output Directory</div>
+              <div class="config-value">dist/angular_app_2/browser</div>
+            </div>
+            <div class="config-row">
+              <div class="config-label">Install Command</div>
+              <div class="config-value">npm install (o dejalo en blanco si querés que lo detecte)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h2>Desplegar</h2>
+          <p>Haz clic en "Deploy" y espera a que Vercel complete el proceso de despliegue.</p>
+          <p>Una vez finalizado, Vercel te proporcionará una URL para acceder a tu aplicación desplegada.</p>
+        </div>
+      </div>
+  
+      <div class="step">
+        <div class="step-number">6</div>
+        <div class="step-content">
+          <h2>Configurar dominio personalizado (opcional)</h2>
+          <p>Si deseas usar un dominio personalizado:</p>
+          <ol>
+            <li>Ve a la sección "Domains" en el panel de control de tu proyecto</li>
+            <li>Agrega tu dominio personalizado</li>
+            <li>Sigue las instrucciones para configurar los registros DNS</li>
+          </ol>
+        </div>
+      </div>
+  
+      <div class="step update-section">
+        <div class="step-number">+</div>
+        <div class="step-content">
+          <h2>Ventajas de usar Vercel</h2>
+          <p>Vercel ofrece varias ventajas para el despliegue de aplicaciones Angular:</p>
+          
+          <div class="update-steps">
+            <div class="update-step">
+              <h3>Despliegue continuo</h3>
+              <p>Cada vez que haces push a tu repositorio, Vercel automáticamente despliega los cambios.</p>
+            </div>
+            
+            <div class="update-step">
+              <h3>Vista previa por rama</h3>
+              <p>Cada pull request genera un despliegue de vista previa para facilitar las pruebas.</p>
+            </div>
+            
+            <div class="update-step">
+              <h3>Certificados SSL automáticos</h3>
+              <p>Vercel proporciona certificados SSL gratuitos para todos los sitios, incluso con dominios personalizados.</p>
+            </div>
+            
+            <div class="update-step">
+              <h3>Red global CDN</h3>
+              <p>Tu aplicación se sirve desde ubicaciones de borde en todo el mundo para una carga más rápida.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer>
+      <p>Desarrollado con Angular - {{ currentYear }}</p>
+    </footer>
+  </div>
+  

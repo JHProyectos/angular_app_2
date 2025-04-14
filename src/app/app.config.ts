@@ -1,8 +1,11 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import type { ApplicationConfig } from "@angular/core"
 
-import { routes } from './app.routes';
+// No importamos routes directamente para evitar el conflicto
+// import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]
-};
+  providers: [
+    // Usamos las rutas definidas en app-routing.module.ts a través del AppRoutingModule
+    // No necesitamos provideRouter aquí
+  ],
+}

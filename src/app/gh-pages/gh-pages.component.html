@@ -1,10 +1,11 @@
-<main class="main">
-  <div class="landing-page">
-    <div class="header" style="background-image: url('/assets/fondo.jpg')">
-      <h1>Guía de Despliegue en GitHub Pages</h1>
+
+
+<div class="landing-page">
+    <div class="header" style="background-image: url('/./assets/fondo.jpg')">
+      <h1>Guía Angular - GitHub Pages</h1>
       <p class="subtitle">Instrucciones paso a paso para desplegar tu aplicación Angular por JH.Dev</p>
     </div>
-    
+    <app-back-button></app-back-button>
     <div class="step-container">
       <div class="step">
         <div class="step-number">1</div>
@@ -18,7 +19,6 @@
         <div class="step-number">2</div>
         <div class="step-content">
           <h2>Clonar el repositorio</h2>
-          <h4>En tu terminal favorita ejecuta los comandos:</h4>
           <pre><code>cd ruta/a/tu/directorio
   git clone https://github.com/JHProyectos/nombre-del-repo.git
   cd nombre-del-repo</code></pre>
@@ -72,14 +72,20 @@
       <div class="step">
         <div class="step-number">8</div>
         <div class="step-content">
-          <h2>Desplegar</h2>
-          <h3>Primero verificar ubicación de index.html</h3>
+          <h2>Verificar ubicación de index.html</h2>
           <pre><code># Revisa la carpeta generada:
   dir dist\nombre-del-repo
   # Si index.html está en dist/nombre-del-repo, usa esa carpeta
-  # Si ves una carpeta browser, y si index.html está en 
-  dist/nombre-del-repo/browser, usa esa carpeta</code></pre>
-            <h3>Ahora usar npx para desplegar</h3>
+  # Si ves una carpeta browser, revisa:
+  dir dist\nombre-del-repo\browser
+  # Si index.html está en dist/nombre-del-repo/browser, usa esa carpeta</code></pre>
+        </div>
+      </div>
+  
+      <div class="step">
+        <div class="step-number">9</div>
+        <div class="step-content">
+          <h2>Desplegar</h2>
           <pre><code># Si index.html está en dist/nombre-del-repo:
   npx angular-cli-ghpages --dir=dist/nombre-del-repo
   # Si index.html está en dist/nombre-del-repo/browser:
@@ -88,7 +94,7 @@
       </div>
   
       <div class="step">
-        <div class="step-number">9</div>
+        <div class="step-number">10</div>
         <div class="step-content">
           <h2>Configurar GitHub Pages</h2>
           <p>En GitHub: Settings > Pages > Source: gh-pages, / (root)</p>
@@ -129,7 +135,7 @@
             </div>
             
             <div class="update-step">
-              <h3>5. Redeployar con npx</h3>
+              <h3>5. Redeployar</h3>
               <pre><code># Si index.html está en dist/nombre-del-repo:
   npx angular-cli-ghpages --dir=dist/nombre-del-repo
   # Si index.html está en dist/nombre-del-repo/browser:
@@ -146,11 +152,7 @@
     </div>
     
     <footer>
-      <p>Desarrollado por JH Proyectos</p>
+      <p>Desarrollado con Angular - {{ currentYear }}</p>
     </footer>
   </div>
   
-    
-</main>
-
-<router-outlet />
