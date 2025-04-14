@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng build --output-path dist/angular_app_2 --base-href /angular_app_2/ && npx angular-cli-ghpages --dir=dist/angular_app_2/browser"
   },
   "private": true,
   "dependencies": {
