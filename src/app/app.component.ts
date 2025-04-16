@@ -24,23 +24,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
       ])
     ])
   ],
-  styles: [
-    `
-    .container {
-      width: 100%;
-      padding: 20px;
-      margin: 0 auto;
-      padding-top: 40px;
-      padding-bottom: 40px;
-    }
-    
-    @media (max-width: 768px) {
-      .container {
-        padding: 10px;
-      }
-    }
-  `,
-  ],
+  styles: [  ],
   standalone: false,
 })
 export class AppComponent {

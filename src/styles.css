@@ -29,14 +29,9 @@ p {
 }
 
 /* Ajustes para el contenedor principal de la aplicación */
-.container {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0;
-}
 
-/* Utilidades para espaciado */
+
+/* Utilidades para espaciado 
 .mt-1 {
   margin-top: 4px;
 }
@@ -69,7 +64,7 @@ p {
   margin-bottom: 2rem;
 }
 
-/* Utilidades para texto */
+ Utilidades para texto */
 .text-center {
   text-align: center;
 }

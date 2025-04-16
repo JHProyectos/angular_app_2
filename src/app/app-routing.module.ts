@@ -8,11 +8,11 @@ const appRoutes: Routes = [
   { path: "", component: LandingPageComponent },
   { path: "gh-pages", component: GhPagesComponent },
   { path: "vercel", component: VercelComponent },
-  {  path: "**", redirectTo: "", pathMatch: "full" },
+  { path: "**", redirectTo: "", pathMatch: "full" },
 ]
 
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

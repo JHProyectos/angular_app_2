@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { BackButtonComponent } from '../back-button/back-button.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css',
 })
