@@ -13,209 +13,205 @@
 }
 
 
-/* === Variables CSS para mantener consistencia === */
-:root {
-    /* Colores pastel para fondos de tarjetas */
-    --color-card-1: #f2e9f0; /* Lavanda claro */
-    --color-card-2: #e6eef5; /* Azul muy claro */
-    --color-card-3: #faf0e0; /* Beige claro */
-    --color-card-4: #e8f4ed; /* Verde muy claro */
-  
-    /* Colores de texto */
-    --color-text-dark: #333333; /* Texto principal oscuro */
-    --color-text-secondary: #666666; /* Texto secundario */
-    --color-text-light: #999999; /* Texto terciario */
-  
-    /* Espaciados */
-    --spacing-sm: 12px;
-    --spacing-md: 20px;
-    --spacing-lg: 32px;
-  
-    /* Bordes y sombras */
-    --border-radius: 16px;
-    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
-  }
-  
-  /* === Base de la landing: fondo y contenedor === */
-  .landing-page {
-    background-color: #f8f9fa; /* Fondo gris muy claro, casi blanco */
-    max-width: 900px; /* Ancho máximo del contenido */
-    margin: 0 auto; /* Centrado horizontal */
-    padding: var(--spacing-lg); /* Espaciado interior uniforme */
-    border-radius: var(--border-radius); /* Bordes redondeados */
-    box-shadow: var(--shadow-soft); /* Sombra sutil */
-    position: relative;
-    overflow: hidden;
-  }
-  
-  /* === Encabezado de la Página === */
-  .header {
-    text-align: center; /* Texto centrado */
-    margin-bottom: var(--spacing-lg); /* Espacio inferior */
-    position: relative;
-    background-color: var(--color-card-1); /* Color lavanda claro */
-    border-radius: var(--border-radius); /* Bordes redondeados */
-    padding: var(--spacing-lg); /* Espaciado interior */
-    box-shadow: var(--shadow-soft); /* Sombra sutil */
-  }
-  
-  /* Título principal (h1) */
-  h1 {
-    color: var(--color-text-dark); /* Color de texto oscuro */
-    font-size: 2.2rem; /* Tamaño grande pero no excesivo */
-    font-weight: 700; /* Negrita */
-    margin-bottom: var(--spacing-sm); /* Espacio inferior */
-    position: relative; /* Para estar por encima del overlay */
-  }
-  
-  /* Línea decorativa debajo del título */
-  h1::after {
-    content: "";
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background-color: #10b981; /* Verde para la línea */
-    border-radius: 2px;
-    transition: width 0.3s ease;
-  }
-  
-  /* Efecto hover para la línea decorativa */
-  h1:hover::after {
-    width: 120px;
-  }
-  
-  /* Subtítulo debajo del título */
-  .subtitle {
-    color: var(--color-text-secondary); /* Color de texto secundario */
-    font-size: 1.1rem;
-    position: relative; /* Para estar por encima del overlay */
-    margin-top: var(--spacing-sm);
-    font-weight: 500;
-  }
-  
-  /* === Contenedor de opciones === */
+/* === Base de la landing: fondo y contenedor === */
+.landing-page {
+  background-color: #f8f9fa;
+  /* Fondo gris muy claro, casi blanco */
+  max-width: 900px;
+  /* Ancho máximo del contenido */
+  margin: 0 auto;
+  /* Centrado horizontal */
+  padding: var(--spacing-lg);
+  /* Espaciado interior uniforme */
+  border-radius: var(--border-radius);
+  /* Bordes redondeados */
+  box-shadow: var(--shadow-soft);
+  /* Sombra sutil */
+  position: relative;
+  overflow: hidden;
+}
+
+/* === Encabezado de la Página === */
+.header {
+  text-align: center;
+  /* Texto centrado */
+  margin-bottom: var(--spacing-lg);
+  /* Espacio inferior */
+  position: relative;
+  background-color: var(--color-card-1);
+  /* Color lavanda claro */
+  border-radius: var(--border-radius);
+  /* Bordes redondeados */
+  padding: var(--spacing-lg);
+  /* Espaciado interior */
+  box-shadow: var(--shadow-soft);
+  /* Sombra sutil */
+}
+
+/* Título principal (h1) */
+h1 {
+  color: var(--color-text-dark);
+  /* Color de texto oscuro */
+  font-size: 2.2rem;
+  /* Tamaño grande pero no excesivo */
+  font-weight: 700;
+  /* Negrita */
+  margin-bottom: var(--spacing-sm);
+  /* Espacio inferior */
+  position: relative;
+  /* Para estar por encima del overlay */
+}
+
+/* Línea decorativa debajo del título */
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #10b981;
+  /* Verde para la línea */
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* Efecto hover para la línea decorativa */
+h1:hover::after {
+  width: 120px;
+}
+
+/* Subtítulo debajo del título */
+.subtitle {
+  color: var(--color-text-secondary);
+  /* Color de texto secundario */
+  font-size: 1.1rem;
+  position: relative;
+  /* Para estar por encima del overlay */
+  margin-top: var(--spacing-sm);
+  font-weight: 500;
+}
+
+/* === Contenedor de opciones === */
+.options-container {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* === Tarjetas de opciones === */
+.option-card {
+  flex: 1;
+  background-color: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Efecto hover para las tarjetas */
+.option-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Colores específicos para cada tarjeta */
+.option-card:nth-child(1) {
+  background-color: var(--color-card-2);
+}
+
+.option-card:nth-child(2) {
+  background-color: var(--color-card-4);
+}
+
+/* Iconos de las opciones */
+.option-icon {
+  height: 120px;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.github-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='%23333333' d='M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z'/%3E%3C/svg%3E");
+}
+
+.vercel-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23000000' d='M12 1L24 22H0L12 1Z'/%3E%3C/svg%3E");
+}
+
+/* Contenido de las opciones */
+.option-content {
+  padding: var(--spacing-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.option-content h2 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-dark);
+  font-size: 1.5rem;
+}
+
+.option-content p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-md);
+  flex: 1;
+}
+
+/* Botón de la opción */
+.option-button {
+  background-color: #10b981;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.option-button:hover {
+  background-color: #059669;
+}
+
+/* === Pie de Página === */
+footer {
+  margin-top: var(--spacing-lg);
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid #e2e8f0;
+}
+
+/* === Estilos Responsivos === */
+@media (max-width: 768px) {
   .options-container {
-    display: flex;
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
-  }
-  
-  /* === Tarjetas de opciones === */
-  .option-card {
-    flex: 1;
-    background-color: white;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-soft);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    display: flex;
     flex-direction: column;
   }
-  
-  /* Efecto hover para las tarjetas */
-  .option-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Colores específicos para cada tarjeta */
-  .option-card:nth-child(1) {
-    background-color: var(--color-card-2);
-  }
-  
-  .option-card:nth-child(2) {
-    background-color: var(--color-card-4);
-  }
-  
-  /* Iconos de las opciones */
-  .option-icon {
-    height: 120px;
-    background-color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: 60px;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  .github-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='%23333333' d='M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z'/%3E%3C/svg%3E");
-  }
-  
-  .vercel-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23000000' d='M12 1L24 22H0L12 1Z'/%3E%3C/svg%3E");
-  }
-  
-  /* Contenido de las opciones */
-  .option-content {
+
+  .landing-page {
     padding: var(--spacing-md);
-    flex: 1;
-    display: flex;
-    flex-direction: column;
   }
-  
-  .option-content h2 {
-    margin-top: 0;
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-text-dark);
-    font-size: 1.5rem;
+
+  .header {
+    padding: var(--spacing-md);
   }
-  
-  .option-content p {
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-md);
-    flex: 1;
+
+  h1 {
+    font-size: 1.8rem;
   }
-  
-  /* Botón de la opción */
-  .option-button {
-    background-color: #10b981;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-    align-self: flex-start;
-  }
-  
-  .option-button:hover {
-    background-color: #059669;
-  }
-  
-  /* === Pie de Página === */
-  footer {
-    margin-top: var(--spacing-lg);
-    text-align: center;
-    color: var(--color-text-light);
-    font-size: 0.9rem;
-    font-weight: 400;
-    padding-top: var(--spacing-md);
-    border-top: 1px solid #e2e8f0;
-  }
-  
-  /* === Estilos Responsivos === */
-  @media (max-width: 768px) {
-    .options-container {
-      flex-direction: column;
-    }
-  
-    .landing-page {
-      padding: var(--spacing-md);
-    }
-  
-    .header {
-      padding: var(--spacing-md);
-    }
-  
-    h1 {
-      font-size: 1.8rem;
-    }
-  }
-  
+}
