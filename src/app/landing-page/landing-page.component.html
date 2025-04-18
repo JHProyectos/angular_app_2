@@ -1,32 +1,30 @@
-
 <div class="landing-page">
-    <div class="header">
-      <h1>Guía de Despliegue Angular</h1>
-      <p class="subtitle">Aprende a desplegar tu aplicación Angular en diferentes plataformas</p>
-    </div>
-    
-    <div class="options-container">
-      <div class="option-card" (click)="navigateTo('gh-pages')">
-        <div class="option-icon github-icon"></div>
-        <div class="option-content">
-          <h2>GitHub Pages</h2>
-          <p>Aprende a desplegar tu aplicación Angular en GitHub Pages de forma gratuita.</p>
-          <div class="option-button">Ver guía</div>
-        </div>
-      </div>
-  
-      <div class="option-card" (click)="navigateTo('vercel')">
-        <div class="option-icon vercel-icon"></div>
-        <div class="option-content">
-          <h2>Vercel</h2>
-          <p>Aprende a desplegar tu aplicación Angular en Vercel con integración continua.</p>
-          <div class="option-button">Ver guía</div>
-        </div>
-      </div>
-    </div>
-    
-    <footer>
-      <p>Desarrollado con Angular - {{ currentYear }}</p>
-    </footer>
+  <div class="header">
+    <h1>Guía de Despliegue Angular</h1>
+    <p class="subtitle">Aprende a desplegar tu aplicación Angular en diferentes plataformas</p>
   </div>
-  
+
+  <div class="options-container">
+    <div class="option-card" (click)="navigateTo('gh-pages')">
+      <div class="option-icon github-icon"></div>
+      <div class="option-content">
+        <h2>GitHub Pages</h2>
+        <p>Aprende a desplegar tu aplicación Angular en GitHub Pages de forma gratuita.</p>
+        <div class="option-button">Ver guía</div>
+      </div>
+    </div>
+
+    <div class="option-card" (click)="navigateTo('vercel')">
+      <div class="option-icon vercel-icon"></div>
+      <div class="option-content">
+        <h2>Vercel</h2>
+        <p>Aprende a desplegar tu aplicación Angular en Vercel con integración continua.</p>
+        <div class="option-button">Ver guía</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Desarrollado con Angular - {{ currentYear }}</p>
+  </footer>
+</div>

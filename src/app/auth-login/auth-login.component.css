@@ -1,0 +1,19 @@
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.google-login-btn {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.user-info {
+  text-align: center;
+}

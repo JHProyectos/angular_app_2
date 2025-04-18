@@ -7,5 +7,5 @@ export const appConfig: ApplicationConfig = {
   providers: [
     // Usamos las rutas definidas en app-routing.module.ts a través del AppRoutingModule
     // No necesitamos provideRouter aquí
-  ],
+  ]
 }

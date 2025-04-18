@@ -1,0 +1,55 @@
+<div class="login-container">
+  <!-- Mostrar formulario si no hay usuario logueado -->
+  <ng-container *ngIf="!user">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="tu@email.com">
+        <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+          El email es obligatorio
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+          Ingresa un email válido
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput formControlName="password" type="password">
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+          La contraseña es obligatoria
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">
+          La contraseña debe tener al menos 6 caracteres
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">
+        Iniciar sesión
+      </button>
+    </form>
+
+    <!-- Botón de Google Sign-In -->
+    <div id="g_id_onload"
+         data-client_id="902395675237-uo029rp0od1ramc8bsmt3eb76kkeb4md.apps.googleusercontent.com"
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin google-login-btn"
+         data-type="standard"
+         data-size="large"
+         data-theme="outline"
+         data-text="sign_in_with"
+         data-shape="rectangular"
+         data-logo_alignment="left">
+    </div>
+  </ng-container>
+
+  <!-- Mostrar información del usuario si está logueado -->
+  <ng-container *ngIf="user">
+    <div class="user-info">
+      <p>Bienvenido, {{ user.name }}!</p>
+      <button mat-raised-button color="warn" (click)="signOut()">Cerrar sesión</button>
+    </div>
+  </ng-container>
+</div>
