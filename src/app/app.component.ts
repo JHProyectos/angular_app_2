@@ -1,7 +1,7 @@
 import { Router } from "@angular/router";
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginButtonComponent } from './login-button/login-button.component';
@@ -69,7 +69,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // o 'auto' si no querés animación
+        window.scrollTo({ top: 0, behavior: 'auto' }); // o 'auto' si no querés animación
       });
 
   }
