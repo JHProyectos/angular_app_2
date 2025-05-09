@@ -8,6 +8,7 @@ import { LoginButtonComponent } from './login-button/login-button.component';
 import { AuthService } from './auth.service';
 import { Subscription } from 'rxjs';
 import { BackButtonComponent } from "./back-button/back-button.component";
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -65,6 +66,12 @@ export class AppComponent implements OnInit, OnDestroy {
     this.userSubscription = this.authService.user$.subscribe(user => {
       this.user = user;
     });
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // o 'auto' si no querés animación
+      });
+
   }
 
   ngOnInit() {
@@ -77,7 +84,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   logout() {
     this.authService.clearUser();
-  }
+  };
+    
 }
 
 
