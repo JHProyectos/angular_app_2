@@ -18,6 +18,7 @@
             <div class="step-content">
                 <h2>Historias de Usuario</h2>
                 <p>Super importante primero definir las Historias de Usuario antes de arrancar</p>
+                 <p>Es importante escribir las historias de usuario para que sólo hagan referencia a un Verbo HTTP</p>
             </div>
 
         </div>
@@ -61,12 +62,31 @@
                 <h4>
                     Como cliente, quiero poder ver el saldo actual de mi cuenta en la página principal, para poder conocer rápidamente mi disponibilidad de fondos al ingresar a la aplicación
                 </h4>
-                <p></p>
+                <h5>Criterios de aceptación</h5>
+                <p>Sistema reactivo: viene un petición del servidor sin que el usuario lo pida</p>
+
+                <h5>Se puede pasar esto al front</h5>
+         
+                <p>Happy path</p>
+
+                <pre><code>GET/accounts/{{ '{' }}accountid{{ '}' }}/balance
+                    JSON
+                    {{ '{' }}
+                        "accountid": "2312414",
+                        "balance": 1600.34,
+                        "currency": "USD"
+                    {{ '}' }}
+                </code></pre>
+                <p>Unhappy path</p>
+                <p>Se puede pasar al Front un código de error para que el que codea el front sabe cuál va a ser la respuesta de la API ante un error, para poder hacer la pantalla de error</p>
+                <code><pre>
+                    "error": "Problema de balance"
+                    "code": "BALANCE_ERROR"
+                </pre></code> 
+
+                
                
             </div>
 
         </div>
     </div>
-
-
-</div>
