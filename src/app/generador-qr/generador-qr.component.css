@@ -1,6 +1,62 @@
+/* Estilo general de la página */
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Fondo degradado suave */
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif; /* Tipografía de Angular Material */
+}
+
+/* Encabezado */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #3f51b5; /* Color primario de Angular Material */
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.header .subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #424242;
+  margin-top: 10px;
+  animation: fadeIn 1s ease-in-out 0.3s;
+}
+
+/* Contenido */
+.content {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
+  animation: slideUp 0.8s ease-out;
+}
+
+.content h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #3f51b5;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Formulario */
 .qr-input {
   width: 100%;
-  max-width: 400px;
   margin-bottom: 20px;
 }
 
@@ -9,33 +65,126 @@ mat-form-field {
 }
 
 button {
-  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
+button:hover {
+  transform: scale(1.02);
+  background-color: #303f9f; /* Un tono más oscuro del primario */
+}
+
+/* Contenedor del QR */
 .qr-container {
-  margin-top: 20px;
+  margin-top: 30px;
   text-align: center;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .qr-container qrcode {
   display: inline-block;
+  border: 3px solid #3f51b5;
+  border-radius: 8px;
+  padding: 10px;
+  background: white;
+  transition: transform 0.3s ease;
+}
+
+.qr-container qrcode:hover {
+  transform: scale(1.05);
 }
 
 .qr-container a {
-  display: block;
-  margin-top: 10px;
+  display: inline-block;
+  margin-top: 15px;
   text-decoration: none;
   color: #3f51b5;
   font-weight: bold;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border: 2px solid #3f51b5;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 .qr-container a:hover {
-  text-decoration: underline;
+  background-color: #3f51b5;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
 }
 
+/* Mensaje de "sin datos" */
 .no-data-message {
   text-align: center;
   color: #666;
   font-size: 1rem;
   margin-top: 20px;
+  font-style: italic;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .landing-page {
+    padding: 15px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .content {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .qr-container {
+    padding: 15px;
+  }
+
+  .qr-container qrcode {
+    padding: 8px;
+  }
 }
