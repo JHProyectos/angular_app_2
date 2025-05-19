@@ -1,0 +1,26 @@
+<div class="landing-page">
+    <div class="header">
+        <h1>Generador QR by JH.Dev</h1>
+        <p class="subtitle">Generá tu QR personalizado</p>
+    </div>
+    <div>
+
+        <body>
+            <h2>Generador de QR Personalizado</h2>
+            <form (ngSubmit)="generateQRCode()">
+                <mat-form-field appearance="fill" class="qr-input">
+                    <mat-label>Texto para el QR</mat-label>
+                    <input matInput [(ngModel)]="qrData" placeholder="Ingresa el texto o URL" required name="qrData">
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit" [disabled]="!qrData">Generar</button>
+            </form>
+            <div *ngIf="qrData; else noData" class="qr-container">
+                <qrcode [qrdata]="qrData" [width]="256" [errorCorrectionLevel]="'M'" [elementType]="elementType"
+                    (qrCodeURL)="onQRCodeURL($event)"></qrcode>
+                <a *ngIf="qrCodeUrl" [href]="qrCodeUrl" [download]="'qr-code.png'">Descargar QR</a>
+            </div>
+            <ng-template #noData>
+                <p class="no-data-message">Ingresa un texto o URL para generar tu QR.</p>
+            </ng-template>
+        </body>
+    </div>

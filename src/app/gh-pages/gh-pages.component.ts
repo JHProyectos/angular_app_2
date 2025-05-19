@@ -8,6 +8,5 @@ import { BackButtonComponent } from '../back-button/back-button.component';
   styleUrl: './gh-pages.component.css'
 })
 export class GhPagesComponent {
-  currentYear = new Date().getFullYear()
 
 }
