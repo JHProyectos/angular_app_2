@@ -33,6 +33,7 @@ export class GeneradorQrComponent {
 
   generateQRCode() {
     if (!this.qrData) {
+      this.qrData = this.qrData.trim() + '\nby JH.Dev'
       return;
     }
     // La generación se maneja automáticamente por el componente <qrcode>

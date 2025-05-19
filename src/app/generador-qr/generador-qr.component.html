@@ -14,7 +14,7 @@
           placeholder="Ingresa el texto o URL (puedes incluir saltos de línea)"
           required
           name="qrData"
-          rows="5"
+          rows="4"
         ></textarea>
       </mat-form-field>
      </form>
@@ -22,9 +22,10 @@
       <qrcode
         [qrdata]="qrData"
         [width]="256"
-        [errorCorrectionLevel]="'M'"
+        [errorCorrectionLevel]="'Q'"
         [elementType]="elementType"
         (qrCodeURL)="onQRCodeURL($event)"
+        colorDark="#1111a2"
       ></qrcode>
       <a *ngIf="qrCodeUrl" [href]="qrCodeUrl" [download]="'qr-code.png'">Descargar QR</a>
     </div>
