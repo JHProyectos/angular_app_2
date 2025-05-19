@@ -8,10 +8,16 @@
     <form (ngSubmit)="generateQRCode()">
       <mat-form-field appearance="fill" class="qr-input">
         <mat-label>Texto para el QR</mat-label>
-        <input matInput [(ngModel)]="qrData" placeholder="Ingresa el texto o URL" required name="qrData">
+        <textarea
+          matInput
+          [(ngModel)]="qrData"
+          placeholder="Ingresa el texto o URL (puedes incluir saltos de línea)"
+          required
+          name="qrData"
+          rows="5"
+        ></textarea>
       </mat-form-field>
-      <button mat-raised-button color="primary" type="submit" [disabled]="!qrData">Generar</button>
-    </form>
+     </form>
     <div *ngIf="qrData; else noData" class="qr-container">
       <qrcode
         [qrdata]="qrData"
