@@ -65,7 +65,7 @@ mat-form-field {
 }
 
 textarea {
-  resize: vertical; /* Permite redimensionar verticalmente */
+  resize: vertical;
   min-height: 100px;
   font-size: 1rem;
   line-height: 1.5;
@@ -82,6 +82,30 @@ button {
 button:hover {
   transform: scale(1.02);
   background-color: #303f9f;
+}
+
+/* Estilo específico para el botón "Generar QR" */
+.generate-button {
+  background-color: #3f51b5;
+  color: white;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.generate-button:hover {
+  transform: scale(1.05);
+  background-color: #303f9f;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  color: #e0e0e0;
+}
+
+.generate-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Contenedor del QR */
@@ -105,6 +129,15 @@ button:hover {
 
 .qr-container qrcode:hover {
   transform: scale(1.05);
+}
+
+/* Aplicar degradado al SVG del QR */
+.qr-container qrcode svg {
+  display: inline-block;
+}
+
+.qr-container qrcode svg rect[fill] {
+  fill: url(#qr-gradient) !important;
 }
 
 .qr-container a {
@@ -185,6 +218,11 @@ button:hover {
   button {
     font-size: 0.9rem;
     padding: 10px;
+  }
+
+  .generate-button {
+    font-size: 1rem;
+    padding: 12px;
   }
 
   .qr-container {

@@ -12,14 +12,15 @@
           matInput
           [(ngModel)]="qrData"
           placeholder="Ingresa el texto o URL (puedes incluir saltos de línea)"
-          required
           name="qrData"
           rows="4"
         ></textarea>
       </mat-form-field>
-     </form>
-    <div *ngIf="qrData; else noData" class="qr-container">
+      <button mat-raised-button color="primary" type="submit" class="generate-button">Generar QR</button>
+    </form>
+    <div *ngIf="qrGenerated; else noData" class="qr-container">
       <qrcode
+        #qrCode
         [qrdata]="qrData"
         [width]="256"
         [errorCorrectionLevel]="'Q'"
@@ -30,7 +31,7 @@
       <a *ngIf="qrCodeUrl" [href]="qrCodeUrl" [download]="'qr-code.png'">Descargar QR</a>
     </div>
     <ng-template #noData>
-      <p class="no-data-message">Ingresa un texto o URL para generar tu QR.</p>
+      <p class="no-data-message">Ingresa un texto o URL y haz clic en 'Generar QR' para crear tu QR.</p>
     </ng-template>
   </div>
 </div>
