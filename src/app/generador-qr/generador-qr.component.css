@@ -1,14 +1,17 @@
 /* Estilo general de la página */
 .landing-page {
   min-height: 100vh;
+  max-width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  padding: 20px;
+  justify-self: center;
+  background: linear-gradient(0deg, #cacdf4 0%, #dbe6f7 100%);
+  padding: 100px;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  border-radius: 30px;
 }
 
 /* Encabezado */
@@ -54,6 +57,14 @@
   text-align: center;
 }
 
+.content h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #5869c6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 /* Formulario */
 .qr-input {
   width: 100%;
@@ -90,7 +101,7 @@ button:hover {
   color: white;
   padding: 14px;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 400;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
@@ -107,6 +118,27 @@ button:hover {
   transform: scale(0.98);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
+.reset-button {
+    background-color: #ea8080;
+  color: white;
+  padding: 10px;
+  font-size: 0.9rem;
+  font-weight: 300;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+  transform: scale(1.05);
+  background-color: #d13b3b;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+
+
 
 /* Contenedor del QR */
 .qr-container {

@@ -4,23 +4,24 @@
     <p class="subtitle">Generá tu QR personalizado</p>
   </div>
   <div class="content">
-    <h2>Generador de QR Personalizado</h2>
-    <form (ngSubmit)="generateQRCode()">
+    <h3>Ingresá tu texto aquí</h3>
+    <form (ngSubmit)="generateQRCode(); $event.preventDefault()">
       <mat-form-field appearance="fill" class="qr-input">
         <mat-label>Texto para el QR</mat-label>
         <textarea
           matInput
-          [(ngModel)]="qrData"
+          [(ngModel)]="inputText"
           placeholder="Ingresa el texto o URL (puedes incluir saltos de línea)"
-          name="qrData"
+          name="inputText"
           rows="4"
         ></textarea>
       </mat-form-field>
       <button mat-raised-button color="primary" type="submit" class="generate-button">Generar QR</button>
+      <button mat-button (click)="resetQR()" class="reset-button" *ngIf="qrGenerated">Resetear</button>
     </form>
     <div *ngIf="qrGenerated; else noData" class="qr-container">
       <qrcode
-        #qrCode
+        #qrCodeElement
         [qrdata]="qrData"
         [width]="256"
         [errorCorrectionLevel]="'Q'"
