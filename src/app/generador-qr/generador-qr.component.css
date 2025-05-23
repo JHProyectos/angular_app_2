@@ -152,10 +152,10 @@ button:hover {
 
 .qr-container qrcode {
   display: inline-block;
-  border: 3px solid #3f51b5;
-  border-radius: 8px;
+  border: 5px solid #1686AE;
+  border-radius: 10px;
   padding: 10px;
-  background: white;
+  background: #F9F6F3;
   transition: transform 0.3s ease;
 }
 
@@ -176,11 +176,11 @@ button:hover {
   display: inline-block;
   margin-top: 15px;
   text-decoration: none;
-  color: #3f51b5;
+  color: #1686AE;
   font-weight: bold;
   font-size: 1rem;
   padding: 8px 16px;
-  border: 2px solid #3f51b5;
+  border: 2px solid #1686AE;
   border-radius: 5px;
   transition: all 0.3s ease;
 }
