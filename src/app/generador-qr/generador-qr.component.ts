@@ -28,6 +28,9 @@ export class GeneradorQrComponent implements AfterViewInit {
   elementType: QRCodeElementType = 'canvas'; // Cambiado a 'canvas'
   qrGenerated: boolean = false;
   inputText: string = '';
+  imageSrc: string = 'assets/JH-logo-qr.png'; // Ruta a tu imagen
+  imageHeight: number = 57; // Altura de la imagen
+  imageWidth: number = 68; // Ancho de la imagen
 
   @ViewChild('qrCodeElement', { static: false }) qrCodeComponent!: QRCodeComponent;
 

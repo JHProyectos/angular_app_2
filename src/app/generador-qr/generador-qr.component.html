@@ -26,8 +26,12 @@
         [width]="256"
         [errorCorrectionLevel]="'Q'"
         [elementType]="elementType"
+        [imageSrc]="imageSrc"
+        [imageHeight]="imageHeight"
+        [imageWidth]="imageWidth"
         (qrCodeURL)="onQRCodeURL($event)"
-        colorDark="#1111a2"
+        colorDark="1686AE"
+        colorLight="F9F6F3"
       ></qrcode>
       <a *ngIf="qrCodeUrl" [href]="qrCodeUrl" [download]="'qr-code.png'">Descargar QR</a>
     </div>
