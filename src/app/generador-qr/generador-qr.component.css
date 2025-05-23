@@ -121,7 +121,7 @@ button:hover {
 
 .reset-button {
   background-color: #ea8080;
-  color: whitesmoke;
+  color: white !important;
   padding: 10px;
   font-size: 0.9rem;
   font-weight: 300;
